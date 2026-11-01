@@ -1,0 +1,8 @@
+{
+  "title": "Championship Contenders",
+  "difficulty": "Medium",
+  "tags": ["greedy", "sorting", "prefix max"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 2
+}

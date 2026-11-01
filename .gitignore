@@ -1,0 +1,10 @@
+# Reference solutions and generators stay private (only the test files are shared)
+problems/*/_author/
+
+# Each person's own editor drafts and submission history
+drafts/
+submissions/
+
+__pycache__/
+*.pyc
+.claude/

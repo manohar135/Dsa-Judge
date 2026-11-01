@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSA Judge</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand">⚡ DSA Judge</a>
+    <span class="crumb" id="crumb"></span>
+  </header>
+
+  <!-- Problem list -->
+  <main id="list-view" class="list-view hidden">
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search problems…">
+      <select id="diff-filter">
+        <option value="">All difficulties</option>
+        <option>Easy</option><option>Medium</option><option>Hard</option>
+      </select>
+      <select id="status-filter">
+        <option value="">Any status</option>
+        <option value="solved">Solved</option>
+        <option value="attempted">Attempted</option>
+        <option value="new">Not tried</option>
+      </select>
+    </div>
+    <table class="problems">
+      <thead><tr><th></th><th>Problem</th><th>Difficulty</th><th>Tests</th></tr></thead>
+      <tbody id="problem-rows"></tbody>
+    </table>
+    <p id="empty-list" class="muted hidden">No problems yet. Add folders under <code>problems/</code>.</p>
+  </main>
+
+  <!-- Problem page -->
+  <main id="problem-view" class="problem-view hidden">
+    <section class="left">
+      <div class="tabs">
+        <button class="tab active" data-tab="statement">Statement</button>
+        <button class="tab" data-tab="tests">Tests</button>
+        <button class="tab" data-tab="submissions">Submissions</button>
+      </div>
+      <div id="tab-statement" class="tab-body">
+        <h1 id="p-title"></h1>
+        <div class="meta" id="p-meta"></div>
+        <article id="p-statement" class="statement"></article>
+        <div id="p-samples"></div>
+      </div>
+      <div id="tab-tests" class="tab-body hidden">
+        <p class="muted">Every test case. Load one into Custom input to debug it, or download the files.</p>
+        <table class="subs">
+          <thead><tr><th>Test</th><th>Input size</th><th></th></tr></thead>
+          <tbody id="test-rows"></tbody>
+        </table>
+      </div>
+      <div id="tab-submissions" class="tab-body hidden">
+        <table class="subs">
+          <thead><tr><th>When</th><th>Lang</th><th>Verdict</th><th>Tests</th><th>Time</th><th></th></tr></thead>
+          <tbody id="sub-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="gutter" id="gutter"></div>
+
+    <section class="right">
+      <div class="toolbar">
+        <select id="lang">
+          <option value="cpp">C++17</option>
+          <option value="python">Python 3</option>
+        </select>
+        <button id="reset-btn" class="ghost" title="Reset to template">Reset</button>
+        <span class="spacer"></span>
+        <button id="run-btn" class="secondary">▶ Run</button>
+        <button id="submit-btn" class="primary">Submit</button>
+      </div>
+      <div id="editor"></div>
+      <div class="hgutter" id="hgutter" title="Drag to resize"></div>
+      <div class="console" id="console">
+        <div class="tabs">
+          <button class="ctab active" data-ctab="input">Custom input</button>
+          <button class="ctab" data-ctab="output">Output</button>
+          <button class="ctab" data-ctab="verdict">Verdict</button>
+        </div>
+        <div id="ctab-input" class="ctab-body"><textarea id="custom-input" spellcheck="false"></textarea></div>
+        <div id="ctab-output" class="ctab-body hidden"><div id="run-output" class="plain muted">Run your code to see output.</div></div>
+        <div id="ctab-verdict" class="ctab-body hidden"><div id="verdict-box" class="muted">Submit to judge against all tests.</div></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

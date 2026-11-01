@@ -1,0 +1,8 @@
+{
+  "title": "Pair Sum Count",
+  "difficulty": "Easy",
+  "tags": ["hashing", "arrays"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 1
+}
