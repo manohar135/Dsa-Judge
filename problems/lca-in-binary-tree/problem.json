@@ -1,0 +1,9 @@
+{
+  "title": "Lowest Common Ancestor (LCA) in a Binary Tree",
+  "difficulty": "Easy",
+  "tags": ["trees", "binary tree", "lca", "strings"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 7
+}
+
