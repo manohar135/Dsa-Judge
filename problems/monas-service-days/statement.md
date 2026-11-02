@@ -1,31 +1,30 @@
-Mona is an on-site Service Engineer for a laptop manufacturer. She travels across her territory, visiting sites where laptops need servicing. She works **8 hours a day**, spending that time either travelling or servicing.
+Mona is an on-site service engineer for a laptop manufacturer. She regularly travels across her territory visiting the sites where laptop servicing needs to be done. She works **8 hours a day**, spending time either travelling to a site or providing service at the site.
 
-Her territory is an $n \times m$ grid of integers, indexed from $(0, 0)$. A positive number marks a site that needs a service call, and its value is the number of hours the service takes. A $0$ means no service is needed there.
+You are given information about Mona's territory in the form of an $R \times C$ dimensional array $matrix$. Each cell in the $matrix$ contains a number denoting the time needed by Mona to complete the servicing at that site. In case a cell has $0$, it means that no servicing is required there.
 
-Mona travels only horizontally or vertically, and it takes her **2 hours per unit distance**. She is planning a vacation and wants to know the minimum number of days needed to finish all her service calls.
+Mona can move only horizontally or vertically at a time and she takes **2 hours** to move to the next cell.
 
-Rules used by this problem:
-
-- Mona starts at the **first site** (no travel before it).
-- She visits the sites in **row-major order**: row by row from top to bottom, left to right within a row.
-- Travel between consecutive sites takes $2 \times (|r_1 - r_2| + |c_1 - c_2|)$ hours.
-- Work can continue across days, so the answer is $\lceil \text{total hours} / 8 \rceil$, where total hours is all service time plus all travel time.
-- If there are no sites, the answer is $0$.
+Mona starts at cell $(0, 0)$ and can finish in any cell. Your job is to find the minimum number of days in which she can complete all the tasks.
 
 ### Input
-The first line contains two integers $n$ and $m$ (rows and columns).
+The first line contains two integers $R$ and $C$ — denoting the number of rows and columns in $matrix$.
 
-Each of the next $n$ lines contains $m$ space-separated integers: the service time at each cell.
+The next $R$ lines contain $C$ integers each — denoting the cells of $matrix$.
 
 ### Output
-Print a single integer: the minimum number of days.
+Print the minimum number of days in which Mona can complete all the tasks.
 
 ### Constraints
-- $1 \le n, m \le 30$
-- $0 \le$ service time at one site $\le 8000$
+- $1 \le R \le 30$
+- $1 \le C \le 30$
+- $0 \le matrix[i][j] \le 1000$
+- It's guaranteed the number of non-zero cells in $matrix \le 15$.
 
 ### Explanation of Example 1
-The sites are at $(0,0)$ and $(2,2)$. Service time is $2 + 1 = 3$ hours. Their Manhattan distance is $4$, so travel takes $4 \times 2 = 8$ hours. The total is $11$ hours, which needs $2$ days.
+Servicing takes $2 + 1 = 3$ hours; route $(0,0) \to (2,2)$ covers $4$ units $= 8$ hours; total $11$ hours $\to 2$ days.
 
 ### Explanation of Example 2
-The sites, in row-major order, are $(0,0)$, $(1,0)$ and $(2,3)$, with service time $3 + 3 + 2 = 8$ hours. Travel covers $1 + 4 = 5$ units, which is $10$ hours. The total is $18$ hours, which needs $3$ days.
+Servicing takes $3 + 3 + 5 = 11$ hours; route $(0,0) \to (1,0) \to (2,2)$ covers $4$ units $= 8$ hours; total $19$ hours $\to 3$ days.
+
+### Explanation of Example 3
+No servicing is required, so $0$ days are needed.

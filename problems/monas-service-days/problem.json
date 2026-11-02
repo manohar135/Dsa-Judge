@@ -1,6 +1,7 @@
 {
-  "title": "Mona's Service Days",
-  "difficulty": "Easy",
+  "title": "Service Engineer",
+  "difficulty": "Hard",
+  "tags": ["bitmask dp", "tsp", "grid"],
   "time_limit_ms": 1000,
   "memory_mb": 256,
   "order": 4
