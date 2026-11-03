@@ -1,0 +1,10 @@
+{
+  "title": "Smallest Reading Desk Capacity",
+  "difficulty": "Medium",
+  "companies": ["IBM"],
+  "tags": ["binary search", "lru cache", "simulation", "hashing"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 10
+}
+

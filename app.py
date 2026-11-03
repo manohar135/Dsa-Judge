@@ -39,6 +39,7 @@ def load_meta(d):
     meta = json.loads((d / "problem.json").read_text(encoding="utf-8"))
     meta.setdefault("title", d.name)
     meta.setdefault("difficulty", "Medium")
+    meta.setdefault("companies", [])
     meta.setdefault("tags", [])
     meta.setdefault("time_limit_ms", 1000)
     meta.setdefault("memory_mb", 256)
@@ -81,7 +82,7 @@ def api_problems():
                               else "attempted" if subs else "new")
             meta["tests"] = len(judge.list_tests(d / "tests"))
             out.append({k: meta[k] for k in
-                        ("slug", "title", "difficulty", "tags", "status", "tests", "order")
+                        ("slug", "title", "difficulty", "companies", "tags", "status", "tests", "order")
                         if k in meta})
     out.sort(key=lambda m: (m.get("order", 10**9), m["title"].lower()))
     return jsonify(out)

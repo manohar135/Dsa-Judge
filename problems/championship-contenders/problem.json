@@ -1,6 +1,7 @@
 {
   "title": "Championship Contenders",
   "difficulty": "Medium",
+  "companies": ["CBA"],
   "tags": ["greedy", "sorting", "prefix max"],
   "time_limit_ms": 1000,
   "memory_mb": 256,

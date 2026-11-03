@@ -1,9 +1,9 @@
 {
   "title": "Balanced-Parity Category Nodes",
   "difficulty": "Medium",
+  "companies": ["Flipkart"],
   "tags": ["trees", "dfs", "binary tree", "parity"],
   "time_limit_ms": 1000,
   "memory_mb": 256,
   "order": 6
 }
-

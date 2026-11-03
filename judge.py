@@ -240,6 +240,10 @@ def _watch_memory(pid, peak, stop, memory_mb, proc):
 
 
 def outputs_match(actual, expected, float_tol=None):
+    e_lines = [line.split() for line in expected.splitlines() if line.strip()]
+    if len(e_lines) > 1 and float_tol is None:
+        a_lines = [line.split() for line in actual.splitlines() if line.strip()]
+        return a_lines == e_lines
     a, e = actual.split(), expected.split()
     if len(a) != len(e):
         return False

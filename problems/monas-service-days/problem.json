@@ -1,6 +1,7 @@
 {
   "title": "Service Engineer",
   "difficulty": "Hard",
+  "companies": ["Flipkart", "JP Morgan", "Myntra"],
   "tags": ["bitmask dp", "tsp", "grid"],
   "time_limit_ms": 1000,
   "memory_mb": 256,

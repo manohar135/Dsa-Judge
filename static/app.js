@@ -159,20 +159,41 @@ async function showList() {
   document.title = "DSA Judge";
   state.current = null;
   state.problems = await api("/api/problems");
+  populateCompanyFilter();
   renderList();
+}
+
+function populateCompanyFilter() {
+  const sel = $("company-filter");
+  if (!sel) return;
+  const cur = sel.value;
+  const companies = [...new Set(state.problems.flatMap((p) => p.companies || []))].sort();
+  sel.innerHTML = `<option value="">All companies</option>` +
+    companies.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("");
+  if (companies.includes(cur)) sel.value = cur;
+}
+
+function renderCompanies(list) {
+  if (!list || !list.length) return '<span class="muted">—</span>';
+  return list.map((c) => `<span class="company-tag">${escapeHtml(c)}</span>`).join("");
 }
 
 function renderList() {
   const q = $("search").value.trim().toLowerCase();
+  const comp = $("company-filter") ? $("company-filter").value : "";
   const diff = $("diff-filter").value, status = $("status-filter").value;
-  const rows = state.problems.filter((p) =>
-    (!diff || p.difficulty === diff) && (!status || p.status === status) &&
-    (!q || p.title.toLowerCase().includes(q)));
+  const rows = state.problems.filter((p) => {
+    const comps = p.companies || [];
+    const matchesQuery = !q || p.title.toLowerCase().includes(q) || comps.some((c) => c.toLowerCase().includes(q));
+    return (!comp || comps.includes(comp)) && (!diff || p.difficulty === diff) &&
+           (!status || p.status === status) && matchesQuery;
+  });
   $("empty-list").classList.toggle("hidden", state.problems.length > 0);
   $("problem-rows").innerHTML = rows.map((p) => `
     <tr data-slug="${escapeHtml(p.slug)}">
       <td class="status-dot status-${p.status}">${p.status === "solved" ? "✔" : p.status === "attempted" ? "●" : ""}</td>
       <td>${escapeHtml(p.title)}</td>
+      <td>${renderCompanies(p.companies)}</td>
       <td class="diff-${escapeHtml(p.difficulty)}">${escapeHtml(p.difficulty)}</td>
       <td class="muted">${p.tests}</td>
     </tr>`).join("");
@@ -192,8 +213,10 @@ async function showProblem(slug) {
   $("crumb").textContent = "/ " + p.title;
   $("p-title").textContent = p.title;
   const pyMs = Math.round(p.time_limit_ms * p.python_time_factor);
+  const compBadges = (p.companies || []).map((c) => `<span class="company-tag">${escapeHtml(c)}</span>`).join("");
   $("p-meta").innerHTML = `
     <span class="diff-${escapeHtml(p.difficulty)}">${escapeHtml(p.difficulty)}</span>
+    ${compBadges ? `<span>${compBadges}</span>` : ""}
     <span>⏱ ${p.time_limit_ms} ms (Python ${pyMs} ms)</span>
     <span>💾 ${p.memory_mb} MB</span>
     <span>🧪 ${p.total_tests} tests</span>`;
@@ -295,8 +318,12 @@ async function run() {
       setRunOutput("Compile Error\n\n" + r.stderr, "v-CE");
     } else if (r.status === "OK" && known) {
       // Running a known test input: compare against its expected output.
-      const norm = (s) => s.split(/\s+/).filter(Boolean).join(" ");
-      const ok = norm(r.stdout) === norm(known.output);
+      const normLines = (s) => s.split(/\r?\n/).map((l) => l.trim().split(/\s+/).filter(Boolean).join(" ")).filter(Boolean);
+      const eLines = normLines(known.output);
+      const aLines = normLines(r.stdout);
+      const ok = eLines.length > 1
+        ? JSON.stringify(aLines) === JSON.stringify(eLines)
+        : aLines.join(" ") === eLines.join(" ");
       const out = $("run-output");
       out.className = "";
       out.innerHTML = `<div class="verdict ${ok ? "v-AC" : "v-WA"}">${ok ? "Passed" : "Wrong Answer"}</div>` +
@@ -393,7 +420,7 @@ function initResizers() {
 }
 
 async function main() {
-  ["search", "diff-filter", "status-filter"].forEach((id) => $(id).addEventListener("input", renderList));
+  ["search", "company-filter", "diff-filter", "status-filter"].forEach((id) => $(id).addEventListener("input", renderList));
   $("problem-rows").addEventListener("click", (e) => {
     const tr = e.target.closest("tr[data-slug]");
     if (tr) location.hash = `#/p/${tr.dataset.slug}`;

@@ -1,0 +1,10 @@
+{
+  "title": "Campus Wi-Fi Passwords",
+  "difficulty": "Easy",
+  "companies": ["Flipkart"],
+  "tags": ["strings", "permutations", "backtracking", "sorting"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 8
+}
+

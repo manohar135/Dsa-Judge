@@ -16,7 +16,10 @@
   <!-- Problem list -->
   <main id="list-view" class="list-view hidden">
     <div class="filters">
-      <input id="search" type="search" placeholder="Search problems…">
+      <input id="search" type="search" placeholder="Search problems or companies…">
+      <select id="company-filter">
+        <option value="">All companies</option>
+      </select>
       <select id="diff-filter">
         <option value="">All difficulties</option>
         <option>Easy</option><option>Medium</option><option>Hard</option>
@@ -29,7 +32,7 @@
       </select>
     </div>
     <table class="problems">
-      <thead><tr><th></th><th>Problem</th><th>Difficulty</th><th>Tests</th></tr></thead>
+      <thead><tr><th></th><th>Problem</th><th>Companies</th><th>Difficulty</th><th>Tests</th></tr></thead>
       <tbody id="problem-rows"></tbody>
     </table>
     <p id="empty-list" class="muted hidden">No problems yet. Add folders under <code>problems/</code>.</p>

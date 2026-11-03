@@ -1,0 +1,9 @@
+{
+  "title": "Folding a Flat List Into Rows",
+  "difficulty": "Easy",
+  "companies": ["IBM"],
+  "tags": ["arrays", "matrix", "simulation"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 9
+}
