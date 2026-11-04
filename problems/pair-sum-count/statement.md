@@ -11,4 +11,5 @@ Print a single integer — the number of such pairs.
 
 ### Constraints
 - $1 \le n \le 2 \cdot 10^5$
-- $-10^9 \le a_i, k \le 10^9$
+- $-10^9 \le a_i \le 10^9$
+- $-2 \cdot 10^9 \le k \le 2 \cdot 10^9$
