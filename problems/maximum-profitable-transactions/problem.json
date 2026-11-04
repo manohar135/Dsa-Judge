@@ -1,0 +1,10 @@
+{
+  "title": "Maximum Profitable Transactions",
+  "difficulty": "Easy",
+  "companies": ["IBM"],
+  "tags": ["greedy", "sorting", "arrays"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 15
+}
+

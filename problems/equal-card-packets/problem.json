@@ -1,0 +1,10 @@
+{
+  "title": "Minimum Cards for Equal Packets",
+  "difficulty": "Easy",
+  "companies": ["IBM"],
+  "tags": ["math", "number theory", "gcd", "primes"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 16
+}
+
