@@ -1,10 +1,9 @@
 {
   "title": "Semester Planner",
   "difficulty": "Medium",
-  "companies": [],
+  "companies": ["IBM"],
   "tags": ["graphs", "topological sort", "dag", "dp"],
   "time_limit_ms": 1000,
   "memory_mb": 256,
   "order": 12
 }
-

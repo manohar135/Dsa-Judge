@@ -1,0 +1,10 @@
+{
+  "title": "Minimum Element Removal",
+  "difficulty": "Easy",
+  "companies": ["IBM"],
+  "tags": ["arrays", "simulation", "linked list", "greedy"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 13
+}
+

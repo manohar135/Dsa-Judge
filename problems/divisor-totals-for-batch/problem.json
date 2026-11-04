@@ -1,0 +1,10 @@
+{
+  "title": "Divisor Totals For Every Reading In A Batch",
+  "difficulty": "Easy",
+  "companies": ["IBM"],
+  "tags": ["math", "number theory", "divisors"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 14
+}
+
