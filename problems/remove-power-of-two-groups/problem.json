@@ -1,0 +1,14 @@
+{
+  "title": "Remove Power-of-Two Groups",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "greedy",
+    "bit manipulation"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 26
+}

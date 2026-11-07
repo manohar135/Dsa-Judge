@@ -1,0 +1,14 @@
+{
+  "title": "Two-Ended CPU Scheduler",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "simulation",
+    "two pointers"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 35
+}

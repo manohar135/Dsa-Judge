@@ -1,0 +1,15 @@
+{
+  "title": "Hamming Distance of Consecutive Windows",
+  "difficulty": "Easy",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "strings",
+    "sliding window",
+    "prefix sums"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 23
+}

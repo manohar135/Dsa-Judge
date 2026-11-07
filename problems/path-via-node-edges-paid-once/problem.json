@@ -1,0 +1,14 @@
+{
+  "title": "Shortest Route Through a Checkpoint, Edges Paid Once",
+  "difficulty": "Hard",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "graphs",
+    "dijkstra"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 31
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Maximum Weighted Difference Sum",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "greedy",
+    "sorting",
+    "modular arithmetic"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 36
+}

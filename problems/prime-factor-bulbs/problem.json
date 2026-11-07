@@ -1,0 +1,14 @@
+{
+  "title": "Prime Factor Bulbs",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "number theory",
+    "sieve"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 32
+}

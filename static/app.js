@@ -321,7 +321,8 @@ async function run() {
       const normLines = (s) => s.split(/\r?\n/).map((l) => l.trim().split(/\s+/).filter(Boolean).join(" ")).filter(Boolean);
       const eLines = normLines(known.output);
       const aLines = normLines(r.stdout);
-      const ok = eLines.length > 1
+      const multiTokenLines = eLines.length > 1 && eLines.some((l) => l.includes(" "));
+      const ok = multiTokenLines
         ? JSON.stringify(aLines) === JSON.stringify(eLines)
         : aLines.join(" ") === eLines.join(" ");
       const out = $("run-output");

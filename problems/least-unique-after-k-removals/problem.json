@@ -1,0 +1,15 @@
+{
+  "title": "Least Number of Unique Integers after K Removals",
+  "difficulty": "Easy",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "greedy",
+    "hash map",
+    "sorting"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 19
+}

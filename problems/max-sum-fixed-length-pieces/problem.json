@@ -1,0 +1,13 @@
+{
+  "title": "Maximum Sum of Fixed-Length Pieces",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "dynamic programming"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 22
+}

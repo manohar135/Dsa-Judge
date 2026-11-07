@@ -1,0 +1,14 @@
+{
+  "title": "Minimum Subsequences with a Majority Element",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "greedy",
+    "counting"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 28
+}

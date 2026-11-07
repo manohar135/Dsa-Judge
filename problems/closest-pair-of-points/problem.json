@@ -1,0 +1,15 @@
+{
+  "title": "Closest Pair of Points",
+  "difficulty": "Hard",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "geometry",
+    "sweep line",
+    "divide and conquer"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 38
+}

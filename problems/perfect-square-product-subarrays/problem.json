@@ -1,0 +1,15 @@
+{
+  "title": "Perfect-Square Product Subarrays",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "bitmask",
+    "prefix xor",
+    "hashing"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 41
+}

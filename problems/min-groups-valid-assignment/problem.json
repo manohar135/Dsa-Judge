@@ -1,0 +1,15 @@
+{
+  "title": "Minimum Number of Groups to Create a Valid Assignment",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "greedy",
+    "math",
+    "counting"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 20
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Earliest Common Free Slot",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "intervals",
+    "sorting"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 25
+}

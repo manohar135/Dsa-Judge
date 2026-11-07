@@ -1,0 +1,14 @@
+{
+  "title": "Count Subarrays With Fixed Minimum and Maximum",
+  "difficulty": "Medium",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "sliding window",
+    "two pointers"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 34
+}

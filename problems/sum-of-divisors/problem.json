@@ -1,0 +1,14 @@
+{
+  "title": "Sum of Divisors of Every Element",
+  "difficulty": "Easy",
+  "companies": [
+    "MathWorks"
+  ],
+  "tags": [
+    "math",
+    "sieve"
+  ],
+  "time_limit_ms": 2000,
+  "memory_mb": 256,
+  "order": 21
+}
