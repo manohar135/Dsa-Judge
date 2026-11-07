@@ -1,0 +1,10 @@
+{
+  "title": "Lexicographically Largest Identifier",
+  "difficulty": "Hard",
+  "companies": ["Amazon"],
+  "tags": ["strings", "divide and conquer", "greedy", "recursion"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 17
+}
+

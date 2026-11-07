@@ -1,0 +1,10 @@
+{
+  "title": "Minimum Total Cost After Adding One Warehouse",
+  "difficulty": "Hard",
+  "companies": ["Amazon"],
+  "tags": ["grid", "bfs", "prefix sum", "chebyshev distance"],
+  "time_limit_ms": 1000,
+  "memory_mb": 256,
+  "order": 18
+}
+
